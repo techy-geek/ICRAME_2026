@@ -186,7 +186,7 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(108, 107, 109, 0.7), rgba(0, 0, 0, 0.7)), url('../images/image.png');
+  background: linear-gradient(rgba(42, 42, 43, 0.7), rgba(0, 0, 0, 0.7)), url('https://res.cloudinary.com/dv7jsvmit/image/upload/v1776610422/image_eu8hnz.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
