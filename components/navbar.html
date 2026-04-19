@@ -30,3 +30,16 @@
     </div>
   </nav>
 </header>
+
+<script>
+  (function() {
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.nav-links a')) {
+        var toggle = document.getElementById('menu-toggle');
+        if (toggle && window.getComputedStyle(toggle).display !== 'none' || toggle && toggle.checked) {
+          toggle.checked = false;
+        }
+      }
+    });
+  })();
+</script>

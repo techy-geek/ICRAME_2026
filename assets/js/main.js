@@ -45,21 +45,14 @@ async function loadGlobalComponents() {
 }
 
 function bindNavbarEvents() {
-  const menuBtn = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
+  const menuCheckbox = document.getElementById("menu-toggle");
   const navAnchors = document.querySelectorAll(".nav-links a");
-
-  if (menuBtn && navLinks) {
-    menuBtn.addEventListener("click", () => {
-      const open = navLinks.classList.toggle("show");
-      menuBtn.setAttribute("aria-expanded", String(open));
-    });
-  }
 
   navAnchors.forEach((anchor) => {
     anchor.addEventListener("click", () => {
-      navLinks?.classList.remove("show");
-      menuBtn?.setAttribute("aria-expanded", "false");
+      if (menuCheckbox && menuCheckbox.checked) {
+        menuCheckbox.checked = false;
+      }
     });
   });
 }
@@ -138,9 +131,23 @@ async function renderRoute() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+function updateVisitorCount() {
+  fetch('https://api.counterapi.dev/v1/icrame2026/site_visits/up')
+    .then(response => response.json())
+    .then(data => {
+      const el = document.getElementById('visitor-count');
+      if (el) el.textContent = data.count.toLocaleString();
+    })
+    .catch(err => {
+      const el = document.getElementById('visitor-count');
+      if (el) el.textContent = 'Unavailable';
+    });
+}
+
 async function init() {
   await loadGlobalComponents();
   bindNavbarEvents();
+  updateVisitorCount();
   window.addEventListener("hashchange", renderRoute);
   await renderRoute();
 }

@@ -6,35 +6,12 @@
     </div>
 
     <div class="footer-block visitor-counter">
-      <p>👁️ Visitors: <strong id="visitor-count">...</strong></p>
+      <p>Visitors: <strong id="visitor-count">...</strong></p>
     </div>
-    
-    <script>
-      (function() {
-        function updateCounter() {
-          fetch('https://api.counterapi.dev/v1/icrame2026/site_visits/up')
-            .then(response => response.json())
-            .then(data => {
-              const el = document.getElementById('visitor-count');
-              if (el) el.textContent = data.count.toLocaleString();
-            })
-            .catch(err => {
-              const el = document.getElementById('visitor-count');
-              if (el) el.textContent = 'Unavailable';
-            });
-        }
-    
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', updateCounter);
-        } else {
-          updateCounter();
-        }
-      })();
-    </script>
-    
+
     <div class="footer-block contact-block">
       <p>
-        📧 Email: 
+       Email: 
         <a href="mailto:icrame2026@nits.ac.in">icrame2026@nits.ac.in</a>
       </p>
     </div>
