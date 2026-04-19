@@ -6,20 +6,18 @@ const ROUTES = {
   "call-for-papers": "pages/call-for-papers.html",
   "important-dates": "pages/important-dates.html",
   "paper-submission": "pages/paper-submission.html",
+  sponsors: "pages/sponsors.html",
   registration: "pages/registration.html",
   contact: "pages/contact.html",
 };
 
 const HOME_COMPONENTS = [
   "components/home/about-icrame.html",
-  "components/home/venue.html",
   "components/home/important-dates.html",
-  "components/home/speakers.html",
-  "components/home/publications.html",
+  // "components/home/speakers.html",
+  // "components/home/publications.html",
   "components/home/about-nit.html",
-  "components/home/mech-dept.html",
-  "components/home/about-silchar.html",
-  "components/home/gallery.html",
+  // "components/home/gallery.html",
   "components/home/contact-snippet.html",
 ];
 
@@ -74,23 +72,45 @@ function setActiveLink(route) {
   });
 }
 
-function updateCountdown() {
-  const timerEl = document.getElementById("countdown-timer");
-  if (!timerEl) {
-    return;
-  }
-  const target = new Date("2026-10-05T09:00:00+05:30").getTime();
-  const diff = target - Date.now();
+function startCountdown() {
+  const targetDate = new Date("2026-10-05T09:00:00+05:30").getTime();
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
+  const messageEl = document.getElementById("countdown-message");
 
-  if (diff <= 0) {
-    timerEl.textContent = "Conference is now live";
-    return;
-  }
+  if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  timerEl.textContent = `${days}d ${hours}h ${minutes}m`;
+  const pad = (n) => String(n).padStart(2, "0");
+
+  const update = () => {
+    const now = Date.now();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      daysEl.textContent = "00";
+      hoursEl.textContent = "00";
+      minutesEl.textContent = "00";
+      secondsEl.textContent = "00";
+      if (messageEl) messageEl.textContent = "🎉 ICRAME 2026 is live now!";
+      if (countdownInterval) clearInterval(countdownInterval);
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    daysEl.textContent = pad(days);
+    hoursEl.textContent = pad(hours);
+    minutesEl.textContent = pad(minutes);
+    secondsEl.textContent = pad(seconds);
+  };
+
+  update();
+  countdownInterval = setInterval(update, 1000);
 }
 
 async function renderHomeComponents() {
@@ -113,8 +133,7 @@ async function renderRoute() {
   }
   if (route === "home") {
     await renderHomeComponents();
-    updateCountdown();
-    countdownInterval = window.setInterval(updateCountdown, 60000);
+    startCountdown();
   }
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
@@ -129,3 +148,4 @@ async function init() {
 init().catch((error) => {
   appRoot.innerHTML = `<section class="section"><div class="container"><div class="card"><h2>Unable to load page</h2><p>${error.message}</p></div></div></section>`;
 });
+// Initialization complete.

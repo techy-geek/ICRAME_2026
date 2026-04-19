@@ -3,13 +3,33 @@
   <div class="container hero-content">
     <p class="hero-kicker">5-8 October 2026 | NIT Silchar, Assam, India</p>
     <h1>ICRAME 2026</h1>
-    <p class="hero-subtitle">International Conference on Recent Advances in Mechanical Engineering</p>
+    <p class="hero-subtitle">7th International Conference on Recent Advances in Materials and Emerging Applications 2026</p>
     <div class="cta-row">
       <a class="btn primary" href="#paper-submission">Submit Paper</a>
       <a class="btn primary" href="#registration">Register</a>
-      <a class="btn" href="#call-for-papers">Explore Tracks</a>
+      <a class="btn primary" href="#call-for-papers">Explore Tracks</a>
     </div>
-    <p class="note">Conference starts in <span id="countdown-timer">Loading...</span></p>
+
+    <div class="countdown-wrapper" style="margin-top: 3.5rem;">
+      <h2 id="countdown-title">Conference starts in</h2>
+      <div id="countdown" class="countdown-grid" role="timer" aria-live="polite">
+        <div class="time-card"><span id="days">00</span><small>Days</small></div>
+        <div class="time-card"><span id="hours">00</span><small>Hours</small></div>
+        <div class="time-card"><span id="minutes">00</span><small>Minutes</small></div>
+        <div class="time-card"><span id="seconds">00</span><small>Seconds</small></div>
+      </div>
+      <p id="countdown-message" class="countdown-message"></p>
+    </div>
   </div>
 </section>
 <div id="home-components-root"></div>
+
+<style>
+  .btn:hover {
+  background: #066B6F;
+  color: white;
+}
+
+
+
+</style>

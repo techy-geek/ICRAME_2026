@@ -1,8 +1,83 @@
 <section class="section alt">
   <div class="container">
-    <h2 class="section-title">About NIT Silchar</h2>
-    <div class="card">
-      <p>NIT Silchar is an Institute of National Importance known for strong academics, quality research output, and national-level impact across engineering disciplines.</p>
+    <h2 class="section-title" style="text-align: center; margin-bottom: 40px; text-transform: uppercase;">Discover the Venue</h2>
+    <div class="grid three">
+      
+      <!-- Card 1: NIT Silchar -->
+      <article class="image-card">
+        <img src="https://res.cloudinary.com/dv7jsvmit/image/upload/v1776610422/image_eu8hnz.png" alt="NIT Silchar">
+        <div class="image-card-content">
+          <h3>NIT Silchar</h3>
+          <p>The National Institute of Technology Silchar is one of the premier technical institutes in the country, known for its strong academic foundation and commitment to excellence. Established with the vision of imparting quality technical education, the institute has steadily grown into a center of innovation and research. Since the commencement of its academic activities, NIT Silchar has focused on nurturing skilled professionals by integrating modern teaching methodologies, advanced technologies, and research-driven learning. Over the years, the institute has continuously evolved to keep pace with emerging technological trends and sustainable developments, supported by a dedicated team of highly qualified and experienced faculty across various disciplines.</p>
+        </div>
+      </article>
+
+      <!-- Card 2: Mech Dept -->
+      <article class="image-card">
+        <img src="https://res.cloudinary.com/dv7jsvmit/image/upload/v1776610859/Screenshot_2026-04-19_203017_cpiuhl.png" alt="Mechanical Engineering Department">
+        <div class="image-card-content">
+          <h3>Mechanical Engineering</h3>
+          <p>The department was established in 1967 in the institute with the academic activities starting on 2nd November 1977. The Department is one of the oldest as well as finest in the zone and carries a rich legacy from thereon. From the very onset, the main objective of the department is to strengthen the academic and technical knowledge of the students through various world-class technologies, teaching-learning, and research activities. Over these glorious years of its journey, the department is keeping itself up to date with the latest technological and sustainable developments and trends in the field and with a dedicated faculty of highly qualified and experienced members in all streams of mechanical engineering.</p>
+        </div>
+      </article>
+
+      <!-- Card 3: Silchar -->
+      <article class="image-card">
+        <img src="https://res.cloudinary.com/dv7jsvmit/image/upload/v1776611050/Screenshot_2026-04-19_203308_hfo4vs.png" alt="Silchar City">
+        <div class="image-card-content">
+          <h3>About Silchar</h3>
+          <p>Silchar is a prominent city located in the southern part of the state of Assam and serves as the administrative and cultural hub of the Barak Valley. Known for its serene environment and rich heritage, Silchar has developed into an important center for education, trade, and connectivity in the region. The city is well-connected by road, rail, and air, making it a gateway to the northeastern states as well as neighboring regions.
+
+Silchar is characterized by its diverse culture, where people from various communities coexist harmoniously, contributing to a vibrant social fabric. The presence of reputed institutions such as National Institute of Technology Silchar adds to the city’s academic significance.</p>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
+
+<style>
+.image-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(10, 48, 73, 0.06);
+  border: 1px solid #e0e6ed;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.image-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #e0e6ed;
+}
+
+.image-card-content {
+  padding: 24px;
+  flex-grow: 1;
+}
+
+.image-card-content h3 {
+  font-family: "Montserrat", Arial, sans-serif;
+  color: #123c5a;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.image-card-content p {
+  color: #444;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+</style>

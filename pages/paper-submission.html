@@ -7,11 +7,85 @@
 </section>
 <section class="section">
   <div class="container">
-    <h1 class="section-title">Paper Submission</h1>
-    <div class="card">
-      <p>Submit full papers through the official submission portal (placeholder link).</p>
-      <p><a class="btn primary" href="#">Go to Submission Portal</a></p>
-      <p class="note">Final portal URL and format template will be updated before launch.</p>
-    </div>
+    <h1 class="section-title">Submission Details</h1>
+
+    <article class="card">
+      <table class="submission-table">
+        <thead>
+          <tr>
+            <th style="text-align: left">Information</th>
+            <th style="text-align: left">Guidelines & Links</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: left;">Submission Portal</td>
+            <td style="text-align: left;">
+              <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScgdgndzardnFIw65vZLY9keESxrGktWIWQJTaljvllAKDbVA/viewform?usp=publish-editor" style="margin-bottom: 8px;">Access Submission Portal</a>
+              <!-- <p class="note" style="margin: 0; font-size: 0.9rem;">Final portal URL will be updated before launch.</p> -->
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Format Guidelines</td>
+            <td style="text-align: left;">All papers must adhere strictly to the general IEEE double-column format. The maximum page limit is 6 pages.</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Review Process</td>
+            <td style="text-align: left;">All submissions will undergo a double-blind peer review process. Plagiarism is strongly checked (max 20% similarity limit allowed overall).</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Deadlines</td>
+            <td style="text-align: left;">Full paper submission closes on <strong>30 July 2026</strong>. See <a href="#important-dates" style="color: #0b5ed7; font-weight: 500;">Important Dates</a> for a full schedule.</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
   </div>
 </section>
+
+<style>
+.submission-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Header */
+.submission-table thead {
+  background: #123c5a;
+  color: #fff;
+}
+
+.submission-table th {
+  text-align: left;
+  padding: 20px 20px;
+  font-weight: 600;
+}
+
+/* Body */
+.submission-table td {
+  padding: 20px 20px;
+  border-bottom: 1px solid #e0e6ed;
+  vertical-align: top;
+}
+
+/* Zebra striping */
+.submission-table tbody tr:nth-child(even) {
+  background: #f9fbfd;
+}
+
+/* Hover effect */
+.submission-table tbody tr:hover {
+  background: #eef4ff;
+  transition: 0.2s ease;
+}
+
+/* Make category slightly highlighted */
+.submission-table td:first-child {
+  font-weight: 600;
+  color: #0b5ed7;
+  width: 25%;
+}
+</style>

@@ -1,6 +1,107 @@
 <footer class="footer">
   <div class="container footer-grid">
-    <p>Copyright 2026 ICRAME, NIT Silchar. All rights reserved.</p>
-    <p>Email: <a href="mailto:icrame2026@nits.ac.in">icrame2026@nits.ac.in</a></p>
+    
+    <div class="footer-block copyright-block">
+      <p>© 2026 ICRAME, National Institute of Technology Silchar. All rights reserved.</p>
+    </div>
+
+    <div class="footer-block visitor-counter">
+      <p>👁️ Visitors: <strong id="visitor-count">...</strong></p>
+    </div>
+    
+    <script>
+      (function() {
+        function updateCounter() {
+          fetch('https://api.counterapi.dev/v1/icrame2026/site_visits/up')
+            .then(response => response.json())
+            .then(data => {
+              const el = document.getElementById('visitor-count');
+              if (el) el.textContent = data.count.toLocaleString();
+            })
+            .catch(err => {
+              const el = document.getElementById('visitor-count');
+              if (el) el.textContent = 'Unavailable';
+            });
+        }
+    
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', updateCounter);
+        } else {
+          updateCounter();
+        }
+      })();
+    </script>
+    
+    <div class="footer-block contact-block">
+      <p>
+        📧 Email: 
+        <a href="mailto:icrame2026@nits.ac.in">icrame2026@nits.ac.in</a>
+      </p>
+    </div>
+
   </div>
 </footer>
+
+<style>
+.footer {
+  background: #0b3d91;
+  color: #ffffff;
+  padding: 25px 0;
+  margin-top: 40px;
+  position: relative;
+  font-family: "Open Sans", Arial, sans-serif;
+  border-top: 4px solid #ffc107;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-block p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.footer-block strong {
+  color: #ffc107;
+}
+
+.footer a {
+  color: #ffc107;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-grid {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .copyright-block {
+    order: 3;
+    font-size: 0.9rem;
+    color: #e0e7ee;
+  }
+  
+  .visitor-counter {
+    order: 1;
+  }
+  
+  .contact-block {
+    order: 2;
+  }
+}
+</style>
