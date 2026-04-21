@@ -132,11 +132,15 @@ async function renderRoute() {
 }
 
 function updateVisitorCount() {
-  fetch('https://api.counterapi.dev/v1/icrame2026/site_visits/up')
+  fetch('https://abacus.jasoncameron.dev/hit/icrame2026/site_visits')
     .then(response => response.json())
     .then(data => {
       const el = document.getElementById('visitor-count');
-      if (el) el.textContent = data.count.toLocaleString();
+      if (el) {
+        // Abacus returns { value: ... }, counterapi returned { count: ... }
+        const count = data.value || data.count;
+        el.textContent = count ? count.toLocaleString() : 'Unavailable';
+      }
     })
     .catch(err => {
       const el = document.getElementById('visitor-count');
