@@ -31,7 +31,7 @@
             <span style="font-size: 1.2rem; margin-top: 2px;">✉️</span>
             <div>
               <span style="display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #5b6570; font-weight: 600; margin-bottom: 2px;">Email</span>
-              <a href="mailto:icrame2026@nits.ac.in" style="color: #0b5ed7; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: color 0.2s;" onmouseover="this.style.color='#0a4eb5'" onmouseout="this.style.color='#0b5ed7'">icrame2026@nits.ac.in</a>
+              <a href="mailto:icrame2026@nits.ac.in" style="color: #0b5ed7; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: color 0.2s;" onmouseover="this.style.color='#0a4eb5'" onmouseout="this.style.color='#0b5ed7'">icrame2025@nits.ac.in</a>
             </div>
           </div>
           
@@ -68,8 +68,153 @@
 
   </div>
 </section>
+<section class="section alt" id="nearby-places">
+  <div class="container">
+    <h2 class="section-title" style="text-align: center; margin-bottom: 40px; text-transform: uppercase;">Nearby Places to Visit</h2>
+    <div class="grid three">
+      
+      <!-- Card 1: NIT Silchar -->
+      <article class="image-card">
+        <img src="https://res.cloudinary.com/dv7jsvmit/image/upload/v1776845730/Screenshot_2026-04-22_134507_n5afue.png" alt="Haflong">
+        <div class="image-card-content">
+          <h3>Haflong</h3>
+          <p>An Insight into Haflong Tourism in Assam
+Haflong is a beautiful hill station in the state of Assam and is also the headquarters of Dima Hasao district. The place has many tourist attractions which makes holidays here more interesting. It is the only hill station in the state of Assam and is visited by many travelers throughout the year.
+
+A tour to this hill station is absolutely breathtaking as it includes several must visit places that are not be missed out by the vacationers. Haflong hill station is often called as the White Ant Hillock and has a very rich cultural heritage.</p>
+          <div class="distance-info">
+            <span class="distance-icon">📍</span>
+            <div>
+              <span class="distance-label">Distance from NIT Silchar:</span>
+              <span class="distance-km">70 km</span>
+              <span class="distance-time">(Approx. 2 h by road)</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Mech Dept -->
+      <article class="image-card">
+        <img src="https://res.cloudinary.com/dv7jsvmit/image/upload/v1776845649/Screenshot_2026-04-22_134347_rrqngf.png" alt="Sonbil Village Park">
+        <div class="image-card-content">
+          <h3>Sonbil Village Park</h3>
+          <p>Sonbil Village Park is a picturesque natural retreat situated in Deodhar, Assam. This charming park offers visitors a chance to immerse themselves in the lush greenery and serene surroundings typical of rural India. It's a favored spot for families and travelers seeking a peaceful getaway, with opportunities for leisurely walks and picnics amidst nature. The park provides a glimpse into the local landscape, characterized by vibrant flora and fauna, inviting both relaxation and exploration.</p>
+          <div class="distance-info">
+            <span class="distance-icon">📍</span>
+            <div>
+              <span class="distance-label">Distance from NIT Silchar:</span>
+              <span class="distance-km">26 km</span>
+              <span class="distance-time">(Approx. 50 min by road)</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Silchar -->
+      <article class="image-card">
+        <img src="https://res.cloudinary.com/dv7jsvmit/image/upload/v1776845564/Screenshot_2026-04-22_134207_gtzykv.png" alt="Chatla Waterlake">
+        <div class="image-card-content">
+          <h3>Chatla Waterlake</h3>
+          <p>Chatla Water Lake is a significant wetland located near Silchar in the Barak Valley region of Assam, India. This natural lake is renowned for its ecological importance and scenic beauty, attracting visitors seeking tranquility and a glimpse of local biodiversity. The lake serves as a vital habitat for various aquatic species and migratory birds, making it a notable destination for nature enthusiasts and bird watchers. Its serene surroundings and peaceful atmosphere provide an ideal setting for relaxation and exploration.</p>
+          <div class="distance-info">
+            <span class="distance-icon">📍</span>
+            <div>
+              <span class="distance-label">Distance from NIT Silchar:</span>
+              <span class="distance-km">18 km</span>
+              <span class="distance-time">(Approx. 35 min by road)</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
 
 <style>
+.image-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(10, 48, 73, 0.06);
+  border: 1px solid #e0e6ed;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.image-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #e0e6ed;
+}
+
+.image-card-content {
+  padding: 24px;
+  flex-grow: 1;
+}
+
+.image-card-content h3 {
+  font-family: "Montserrat", Arial, sans-serif;
+  color: #123c5a;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.image-card-content p {
+  color: #444;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+  font-size: 0.95rem;
+}
+
+.distance-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid #e8edf2;
+}
+
+.distance-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.distance-label {
+  display: block;
+  font-size: 0.82rem;
+  color: #5b6570;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.distance-km {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0b3c5d;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.distance-time {
+  display: block;
+  font-size: 0.82rem;
+  color: #777;
+  margin-top: 1px;
+}
  .page-banner {
   position: relative;
   /* color: #0b3c5d; */

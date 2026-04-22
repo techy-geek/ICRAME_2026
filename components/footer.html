@@ -1,19 +1,51 @@
 <footer class="footer">
-  <div class="container footer-grid">
-    
-    <div class="footer-block copyright-block">
+  <div class="container">
+
+    <!-- Top section: Quick Links + Contact + Info -->
+    <div class="footer-top">
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#committees">Committees</a></li>
+          <li><a href="#speakers">Speakers</a></li>
+          <li><a href="#call-for-papers">Call for Papers</a></li>
+          <li><a href="#important-dates">Important Dates</a></li>
+        </ul>
+      </div>
+
+      <!-- More Links -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Explore</h4>
+        <ul class="footer-nav">
+          <li><a href="#paper-submission">Paper Submission</a></li>
+          <li><a href="#sponsors">Sponsorship</a></li>
+          <li><a href="#registration">Registration</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Contact</h4>
+        <p class="footer-contact-line">
+          ✉️ <a href="mailto:icrame2025@nits.ac.in">icrame2025@nits.ac.in</a>
+        </p>
+        <p class="footer-contact-line">
+          📍 NIT Silchar, Assam 788010, India
+        </p>
+        <div class="footer-visitor">
+          Visitors: <strong id="visitor-count">...</strong>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
       <p>© 2026 ICRAME, National Institute of Technology Silchar. All rights reserved.</p>
-    </div>
-
-    <div class="footer-block visitor-counter">
-      <p>Visitors: <strong id="visitor-count">...</strong></p>
-    </div>
-
-    <div class="footer-block contact-block">
-      <p>
-       Email: 
-        <a href="mailto:icrame2026@nits.ac.in">icrame2026@nits.ac.in</a>
-      </p>
     </div>
 
   </div>
@@ -21,64 +53,131 @@
 
 <style>
 .footer {
-  background: #0b3d91;
-  color: #ffffff;
-  padding: 25px 0;
+  background: linear-gradient(180deg, #0a2e5c 0%, #071e3d 100%);
+  color: #c8d6e5;
+  padding: 0;
   margin-top: 40px;
-  position: relative;
   font-family: "Open Sans", Arial, sans-serif;
-  border-top: 4px solid #ffc107;
+  border-top: 4px solid #d4af37;
 }
 
-.footer-grid {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.3fr;
+  gap: 40px;
+  padding: 48px 0 36px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-.footer-block p {
+.footer-heading {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin: 0 0 18px 0;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background: #d4af37;
+  border-radius: 2px;
+}
+
+/* Navigation links */
+.footer-nav {
+  list-style: none;
+  padding: 0;
   margin: 0;
-  font-size: 1rem;
 }
 
-.footer-block strong {
-  color: #ffc107;
+.footer-nav li {
+  margin-bottom: 10px;
 }
 
-.footer a {
-  color: #ffc107;
+.footer-nav a {
+  color: #a4b8cf;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  display: inline-block;
+}
+
+.footer-nav a:hover {
+  color: #d4af37;
+  padding-left: 4px;
+}
+
+/* Contact lines */
+.footer-contact-line {
+  font-size: 0.92rem;
+  margin: 0 0 12px 0;
+  color: #a4b8cf;
+  line-height: 1.5;
+}
+
+.footer-contact-line a {
+  color: #d4af37;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s ease;
 }
 
-.footer a:hover {
-  text-decoration: underline;
+.footer-contact-line a:hover {
   color: #fff;
+  text-decoration: underline;
+}
+
+/* Visitor counter */
+.footer-visitor {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: #8a9eb5;
+}
+
+.footer-visitor strong {
+  color: #d4af37;
+  font-size: 1rem;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  padding: 18px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b7f96;
+  letter-spacing: 0.3px;
 }
 
 /* Responsive */
-@media (max-width: 900px) {
-  .footer-grid {
-    flex-direction: column;
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 36px 0 28px;
     text-align: center;
-    gap: 15px;
   }
-  
-  .copyright-block {
-    order: 3;
-    font-size: 0.9rem;
-    color: #e0e7ee;
+
+  .footer-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
-  
-  .visitor-counter {
-    order: 1;
-  }
-  
-  .contact-block {
-    order: 2;
+
+  .footer-nav a:hover {
+    padding-left: 0;
   }
 }
 </style>
