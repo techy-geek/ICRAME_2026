@@ -601,31 +601,25 @@ function handleScrollSpy() {
 // ── Entry Point ──────────────────────────────────────────────
 export function initPublicationsPage() {
   try {
-    var stats      = computeStats(PUBLICATIONS_DATA);
-    var years      = [2025, 2024, 2023, 2022, 2021, 2020];
-    var uniqueTags = extractUniqueTags(PUBLICATIONS_DATA);
+    var tabs   = document.querySelectorAll('.pub-ytab');
+    var panels = document.querySelectorAll('.pub-year-panel');
 
-    renderStats(stats);
-    renderCharts(PUBLICATIONS_DATA);
-    populateTagFilter(uniqueTags);
-    renderYearSelector(years);
-    // NOTE: Static book cards are pre-rendered in publications.html.
-    // renderPublications() is called only by filterPublicationsList() on search/filter.
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        var year = tab.getAttribute('data-year');
 
-    // Wire up static tag pills to filter system
-    document.querySelectorAll('#publications-list-root .bk-tag').forEach(function(pill) {
-      pill.addEventListener('click', function() {
-        var tf = document.getElementById('tag-filter-select');
-        if (tf) { tf.value = pill.textContent.trim(); filterPublicationsList(); }
+        // Activate clicked tab
+        tabs.forEach(function(t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+
+        // Show matching panel, hide the rest
+        panels.forEach(function(panel) {
+          panel.style.display = (panel.id === 'pub-panel-' + year) ? 'block' : 'none';
+        });
       });
     });
-
-    var searchEl = document.getElementById('pub-search-input');
-    var filterEl = document.getElementById('tag-filter-select');
-    if (searchEl) searchEl.addEventListener('input', filterPublicationsList);
-    if (filterEl) filterEl.addEventListener('change', filterPublicationsList);
-    window.addEventListener('scroll', handleScrollSpy);
   } catch (err) {
     console.error('[Publications] initPublicationsPage error:', err);
   }
 }
+
