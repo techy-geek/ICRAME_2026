@@ -1,8 +1,11 @@
+import { initPublicationsPage } from "./publications.js";
+
 const ROUTES = {
   home: "pages/home.html",
   about: "pages/about.html",
   committees: "pages/committees.html",
   speakers: "pages/speakers.html",
+  publications: "pages/publications.html",
   "call-for-papers": "pages/call-for-papers.html",
   "important-dates": "pages/important-dates.html",
   "paper-submission": "pages/paper-submission.html",
@@ -127,6 +130,8 @@ async function renderRoute() {
   if (route === "home") {
     await renderHomeComponents();
     startCountdown();
+  } else if (route === "publications") {
+    initPublicationsPage();
   }
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
